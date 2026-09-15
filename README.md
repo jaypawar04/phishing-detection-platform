@@ -1,3 +1,6 @@
+## Disclaimer
+This project is intended for educational, research, and cybersecurity awareness purposes only.
+
 # Phishing Detection Platform
 
 A web-based cybersecurity platform designed to analyze URLs and identify potential phishing threats.
