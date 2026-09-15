@@ -1,34 +1,69 @@
+# PhishGuard — Phishing Detection & SOC Monitoring Platform
+
+A cybersecurity platform designed to analyze URLs, detect potential phishing threats, generate security alerts, maintain scan history, and provide SOC-style monitoring capabilities.
+
+This project demonstrates practical knowledge of phishing detection, threat analysis, REST API development, database integration, and security monitoring workflows.
+
+---
+
 ## Disclaimer
+
 This project is intended for educational, research, and cybersecurity awareness purposes only.
 
-# Phishing Detection Platform
+Do not use this platform to scan URLs without proper authorization.
 
-A web-based cybersecurity platform designed to analyze URLs and identify potential phishing threats.
-
-The project demonstrates practical knowledge of cybersecurity, threat detection, URL analysis, backend API development, and security monitoring concepts.
+The detection results are intended for demonstration and learning purposes and should not be considered a replacement for professional threat intelligence or security analysis.
 
 ---
 
 ## Project Overview
 
-Phishing attacks are one of the most common cybersecurity threats used to steal sensitive information such as login credentials, financial details, and personal data.
+Phishing attacks are commonly used to steal login credentials, financial information, and personal data.
 
-The Phishing Detection Platform aims to provide a security-focused solution for analyzing suspicious URLs and identifying potential phishing indicators.
+PhishGuard provides a security-focused platform for analyzing suspicious URLs and identifying potential phishing indicators.
 
-The platform is being developed as a practical cybersecurity project combining threat detection concepts with modern web technologies.
+The application combines a Python-based detection engine, FastAPI backend, React frontend, and database-driven alert management system.
+
+The platform is designed as a practical cybersecurity project demonstrating how security detection workflows can be integrated into a web application.
 
 ---
 
 ## Features
 
-- URL analysis for potential phishing threats
-- Suspicious URL detection
-- Security alert generation
-- Threat analysis workflow
-- REST API-based architecture
-- Web-based user interface
-- Scan result management
-- Database integration for storing alerts and scan information
+### URL Security Analysis
+
+- Analyze submitted URLs for suspicious characteristics.
+- Detect potential phishing indicators.
+- Generate a risk score.
+- Classify URLs based on detected risk.
+- Display reasons contributing to the risk assessment.
+
+### SOC Monitoring
+
+- Generate security alerts from scan results.
+- View and manage security alerts.
+- Display alert severity and detection information.
+- Provide a centralized monitoring dashboard.
+
+### Scan Management
+
+- Store scan history in the database.
+- View detailed scan results.
+- Delete scan records when required.
+- Track scan timestamps and verdicts.
+
+### Reporting
+
+- Generate scan reports.
+- Export scan results as PDF documents.
+- Review security findings in a structured format.
+
+### Dashboard
+
+- Display scan statistics.
+- Show risk distribution.
+- Monitor recent scans and alerts.
+- Provide an overview of the security analysis environment.
 
 ---
 
@@ -46,42 +81,60 @@ The platform is being developed as a practical cybersecurity project combining t
 
 - React
 - JavaScript
-- HTML
-- CSS
+- HTML5
+- CSS3
+- Vite
 
 ### Database
 
-- SQLite / PostgreSQL (depending on implementation)
+- SQLite
+
+### Development Tools
+
+- Visual Studio Code
+- Git
+- GitHub
+- Postman / Browser API Testing
 
 ### Cybersecurity Concepts
 
 - Phishing Detection
-- Threat Analysis
-- URL Security Analysis
-- Security Alerts
+- URL Threat Analysis
+- Risk Scoring
+- Security Alert Management
+- Threat Monitoring
 - Input Validation
 - API Security
-- Information Security
+- Security Reporting
 
 ---
-## Installation
-Installation instructions will be added once the project development is complete.
 
 ## Project Architecture
 
 ```text
-Phishing Detection Platform
-│
-├── Frontend
-│   ├── React
-│   └── User Interface
-│
-├── Backend
-│   ├── FastAPI
-│   ├── URL Detection Engine
-│   ├── Threat Analysis
-│   └── Alert Management
-│
-└── Database
-    ├── Scan Records
-    └── Security Alerts
+                         ┌──────────────────────┐
+                         │      React UI        │
+                         │ Dashboard / Scanner  │
+                         │ Alerts / Reports     │
+                         └──────────┬───────────┘
+                                    │
+                                    │ REST API
+                                    ▼
+                         ┌──────────────────────┐
+                         │     FastAPI API      │
+                         │    Python Backend    │
+                         └──────────┬───────────┘
+                                    │
+                    ┌───────────────┼───────────────┐
+                    │               │               │
+                    ▼               ▼               ▼
+             ┌───────────┐  ┌────────────┐  ┌─────────────┐
+             │ Detection │  │ Scan &     │  │ Alert       │
+             │ Engine    │  │ Database   │  │ Management  │
+             └───────────┘  └────────────┘  └─────────────┘
+                                    │
+                                    ▼
+                         ┌──────────────────────┐
+                         │       SQLite         │
+                         │ Scan Records / Alerts│
+                         └──────────────────────┘
